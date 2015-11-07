@@ -140,62 +140,31 @@
 <body>
 <div id="body">
 
-    <a href="https://github.com/square"><img src="logotype.png" width="122" height="31" alt="Square"></a>
-
     <h1>esnext</h1>
 
-    <h2>Tomorrow&rsquo;s JavaScript syntax today</h2>
+    <h2>Bring your JavaScript into the future</h2>
 
     <p>
-        <b>esnext</b> is a <a href="//github.com/square/esnext">JavaScript library</a> for converting JavaScript
-        written using the <a href="http://people.mozilla.org/~jorendorff/es6-draft.html">ES6 draft specification</a>
-        syntax to JavaScript that will work today.
+        <b>esnext</b> modernizes your JavaScript source code, and is a compliment to
+        <a href="https://babeljs.io/">babel</a>. Update your legacy code to modern JavaScript with esnext, then use
+        babel to make it run in legacy environments as needed.
     </p>
 
     <h2>Demo</h2>
 
     <div class="input-output">
         <textarea>/*
-On the left is code written with new JavaScript features,
-and on the right is the console output, plus the same code
-re-written so it can run in today's browsers.
+On the left is some legacy JavaScript, and on the right
+is the same code modernized by esnext.
 
-Edits made to the code on the left will re-generate and
-re-run the code on the right. Try it out!
+Edits made to the code on the left will re-generate
+the code on the right. Try it out!
 */
 
-// Classes
-class Person {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-
-  get name() {
-    // Template strings
-    return `${this.firstName} ${this.lastName}`;
-  }
-
-  toString() {
-    return this.name;
-  }
-}
-
-console.log(
-  'Full name is:',
-  new Person('Michael', 'Bluth')
-);
-
-// Arrow functions
-console.log([1, 2, 3].map(x => x * x));
-
-// Rest params
-function join(delim, ...items) {
-  return items.join(delim);
-}
-
-// Spread args
-console.log(join('-', ...[415, 555, 1212]));
+var memoize = require('lodash').memoize;
+var upperCase = memoize(function(string) {
+  return string.toUpperCase();
+});
 </textarea>
 
         <textarea readonly></textarea>
@@ -207,7 +176,7 @@ console.log(join('-', ...[415, 555, 1212]));
       <span style="float:right;">
         Released under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License 2.0</a>.
       </span>
-        Copyright 2014 <a href="http://squareup.com">Square, Inc.</a>
+        Copyright 2015 Brian Donovan
     </footer>
 
 </div>
