@@ -106,8 +106,13 @@
             font-size: 12px;
             padding: 2px 8px;
         }
+
+        body .github-fork-ribbon {
+            background-color: #000;
+        }
     </style>
     <link rel="stylesheet" href="vendor/codemirror.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
 </head>
 
 <body>
@@ -154,7 +159,11 @@ var upperCase = memoize(function(string) {
 
 </div>
 
-<a href="https://github.com/esnext/esnext"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/esnext/esnext">Fork me on GitHub</a>
+    </div>
+</div>
 
 <script type="text/javascript" charset="utf-8" src="esnext.js"></script>
 <script type="text/javascript" charset="utf-8" src="vendor/codemirror.js"></script>
