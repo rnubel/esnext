@@ -5,6 +5,7 @@ import * as objectsDestructuring from './objects.destructuring';
 import * as stringsTemplate from './strings.template';
 import * as objectsShorthand from './objects.shorthand';
 import * as objectsConcise from './objects.concise';
+import * as objectsComputed from './objects.computed';
 
 export default [
   modulesCommonjs,
@@ -13,5 +14,6 @@ export default [
   objectsDestructuring,
   stringsTemplate,
   objectsShorthand,
-  objectsConcise
+  objectsConcise,
+  objectsComputed,
 ];
