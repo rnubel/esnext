@@ -1,12 +1,13 @@
 import Module from './module';
 import allPlugins from './plugins/index';
-import estraverse from 'estraverse'; // TODO: import { traverse } from 'estraverse';
 import shebangRegex from 'shebang-regex';
 import type { RenderedModule } from './module';
-import type { VisitorOption } from 'estraverse';
+import type { VisitorOption } from 'estraverse-jsnext';
 import { parse } from 'espree';
+import { traverse } from 'estraverse-jsnext';
 
 export { default as run } from './cli';
+export { allPlugins as plugins };
 
 type PluginBookendCallback = (m: Module) => ?Object;
 type PluginTraversalCallback = (node: Object, module: Module, context: ?Object) => ?VisitorOption;
@@ -43,7 +44,7 @@ export function convert(source: string, options: (Options|Array<Plugin>)={}): Re
     const { begin, end, enter, leave } = plugin;
     const context = begin ? begin(module) : null;
 
-    estraverse.traverse(module.ast, {
+    traverse(module.ast, {
       enter(node, parent) {
         Object.defineProperty(node, 'parentNode', {
           value: parent,

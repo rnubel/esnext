@@ -1,13 +1,11 @@
 import BaseContext from '../context';
 import clone from '../utils/clone';
-import estraverse from 'estraverse';
 import hasParens from '../utils/hasParens';
 import needsParens from '../utils/needsParens';
 import replace from '../utils/replace';
 import type Module from '../module';
-import type { ScopeManager } from 'escope';
-
-const { Syntax, VisitorOption } = estraverse;
+import type { ScopeManager } from 'escope/src/index';
+import { Syntax, VisitorOption } from 'estraverse-jsnext';
 
 export const name = 'functions.arrow';
 export const description = 'Transform regular functions to arrow functions as appropriate.';

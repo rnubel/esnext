@@ -1,5 +1,4 @@
-import estraverse from 'estraverse';
-const { Syntax } = estraverse;
+import { Syntax } from 'estraverse-jsnext';
 
 export default function isMemberExpression(node: Object, keyPath: ?(string|RegExp)=null): boolean {
   if (node.type !== Syntax.MemberExpression) {

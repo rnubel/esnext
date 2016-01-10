@@ -1,11 +1,9 @@
 import BaseContext from '../context';
 import clone from '../utils/clone';
-import estraverse from 'estraverse'; // TODO: import { traverse } from 'estraverse';
 import groupContentBetweenElements from '../utils/groupContentBetweenElements';
 import replace from '../utils/replace';
 import type Module from '../module';
-
-const { Syntax, VisitorOption } = estraverse;
+import { Syntax, VisitorOption } from 'estraverse-jsnext';
 
 export const name = 'strings.template';
 export const description = 'Transforms manual string concatenation into template strings.';

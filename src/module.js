@@ -1,6 +1,6 @@
 import MagicString from 'magic-string';
-import type { Scope } from 'escope';
-import { analyze } from 'escope';
+import type { Scope } from 'escope/src/index';
+import { analyze } from 'escope/src/index';
 import { parse } from 'espree';
 
 type Warning = {

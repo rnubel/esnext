@@ -1,12 +1,10 @@
 import BaseContext from '../context';
 import clone from '../utils/clone';
-import estraverse from 'estraverse'; // TODO: import { traverse } from 'estraverse';
 import isMemberExpression from '../utils/isMemberExpression';
 import replace from '../utils/replace';
 import type Module from '../module';
 import { Binding, ExportSpecifierListStringBuilder, ImportSpecifierListStringBuilder } from '../bindings';
-
-const { Syntax, VisitorOption } = estraverse;
+import { Syntax, VisitorOption } from 'estraverse-jsnext';
 
 export const name = 'modules.commonjs';
 export const description = 'Transform CommonJS modules into ES6 modules.';

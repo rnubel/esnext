@@ -1,7 +1,5 @@
-import estraverse from 'estraverse';
-import type { Reference, ScopeManager } from 'escope';
-
-const { Syntax } = estraverse;
+import type { Reference, ScopeManager } from 'escope/src/index';
+import { Syntax } from 'estraverse-jsnext';
 
 type DeclarationKind = 'var' | 'let' | 'const';
 

@@ -1,10 +1,8 @@
 import BaseContext from '../context';
 import clone from '../utils/clone';
-import estraverse from 'estraverse';
 import mostRestrictiveKindForDeclaration from '../utils/mostRestrictiveKindForDeclaration';
 import type Module from '../module';
-
-const { Syntax, VisitorOption } = estraverse;
+import { Syntax, VisitorOption } from 'estraverse-jsnext';
 
 export const name = 'declarations.block-scope';
 export const description = 'Transform `var` into `let` and `const` as appropriate.';

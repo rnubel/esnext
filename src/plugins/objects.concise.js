@@ -1,9 +1,7 @@
 import BaseContext from '../context';
 import clone from '../utils/clone';
-import estraverse from 'estraverse'; // TODO: import { traverse } from 'estraverse';
 import type Module from '../module';
-
-const { Syntax, VisitorOption  } = estraverse;
+import { Syntax, VisitorOption } from 'estraverse-jsnext';
 
 export const name = 'objects.concise';
 export const description = 'Use concise object property method syntax.';

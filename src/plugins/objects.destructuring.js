@@ -1,10 +1,8 @@
 import BaseContext from '../context';
 import clone from '../utils/clone';
-import estraverse from 'estraverse'; // TODO: import { traverse } from 'estraverse';
+import { Syntax, VisitorOption } from 'estraverse-jsnext';
 import replace from '../utils/replace';
 import type Module from '../module';
-
-const { Syntax, VisitorOption  } = estraverse;
 
 export const name = 'objects.destructuring';
 export const description = 'Transform some declarations and assignments to the more compact destructuring form.';
@@ -69,7 +67,9 @@ class Context extends BaseContext {
 
     // `const a = obj.a, b = obj.b;` -> `const { a = obj.a, b = obj.b;`
     //                                         ^^
-    this.insert(leftRightOfAssignment(firstElement).left.range[0], '{ ');
+    const lr = leftRightOfAssignment(firstElement);
+    if (!lr.left.range) { console.log(lr); }
+    this.insert(lr.left.range[0], '{ ');
 
     for (let i = 0; i < elements.length - 1; i++) {
       const { left, right } = leftRightOfAssignment(elements[i]);

@@ -1,6 +1,4 @@
-import estraverse from 'estraverse';
-
-const { Syntax } = estraverse;
+import { Syntax } from 'estraverse-jsnext';
 
 export default function needsParens(node: Object): boolean {
   switch (node.type) {
