@@ -33,9 +33,9 @@
   "repository": "https://github.com/esnext/esnext.git",
   "bugs": "https://github.com/esnext/esnext/issues",
   "dependencies": {
-    "babel-traverse": "^6.7.6",
-    "babel-types": "^6.7.2",
-    "babylon": "^6.7.0",
+    "babel-traverse": "6.7.6",
+    "babel-types": "6.7.2",
+    "babylon": "6.7.0",
     "magic-string": "^0.10.2",
     "mkdirp": "^0.5.1",
     "shebang-regex": "^2.0.0",
@@ -55,7 +55,7 @@
     "eslint-plugin-babel": "^3.0.0",
     "mocha": "^2.3.4",
     "mversion": "^1.10.1",
-    "rollup": "^0.24.1",
+    "rollup": "^0.26.2",
     "rollup-plugin-babel": "^2.3.8",
     "rollup-plugin-npm": "^1.2.1",
     "source-map-support": "^0.4.0"
